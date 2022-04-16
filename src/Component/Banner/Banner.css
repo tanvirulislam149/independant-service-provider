@@ -1,0 +1,14 @@
+.banner {
+    position: relative;
+    margin-bottom: 1500px;
+    margin-top: 40px;
+}
+
+.banner-text {
+    color: rgb(77, 77, 145);
+    font-size: 5vw;
+    position: absolute;
+    top: 70px;
+    left: 10%;
+    font-weight: 900;
+}

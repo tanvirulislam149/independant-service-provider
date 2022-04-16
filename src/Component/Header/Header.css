@@ -1,0 +1,13 @@
+.header {
+    background-image: linear-gradient(to right, rgb(77, 150, 245), rgb(124, 235, 250));
+    position: fixed;
+}
+
+.care {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.nav-logo {
+    color: rgb(77, 77, 145);
+}
