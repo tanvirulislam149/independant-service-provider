@@ -1,0 +1,56 @@
+[
+    {
+        "id": "625b19eb3ea2f9a0aa5a5b55",
+        "index": 0,
+        "picture": "https://www.clevelandclinic.org/healthinfo/ShowImage.ashx?PIC=4539",
+        "price": 30,
+        "name": "Dental Crowns",
+        "shortText": "Dental crowns are caps placed on top of damaged teeth.",
+        "description": "A dental crown is a dental prosthesis which replaces the visible part of a tooth. A dental crown functions to strengthen teeth, restore their original shape, and improve their appearance. Dental crowns are also used to hold dental bridges in place and cover dental implants."
+    },
+    {
+        "id": "625b19eb66d38f25cf070992",
+        "index": 1,
+        "picture": "https://crawfordleishmandental.com/wp-content/uploads/2019/02/Cosmetic-Dentistry-Dental-Bridge-Utah.jpg",
+        "price": 40,
+        "name": "Bridgework",
+        "shortText": "This consists of a replacement for the missing tooth (the pontic), plus a crown for each of the two teeth adjacent to the gap.",
+        "description": "A dental bridge is a structure between two dental crowns to fill the gap between missing teeth. A bridge can be supported by your teeth, implants, or a combination of teeth and implants. A dental bridge can restore your smile, improve your appearance, and take years off your look. Who doesn't want to look better- or younger?"
+    },
+    {
+        "id": "625b19eb1b5cc7a112a2e419",
+        "index": 2,
+        "picture": "https://pnwdentalcenter.com/wp-content/uploads/2021/08/Composite-Fillings.jpg",
+        "price": 23,
+        "name": "Cosmetic Fillings",
+        "shortText": "Cosmetic fillings are dental fillings that match your natural teeth.",
+        "description": "Cosmetic fillings, or tooth- colored fillings, are made of composite resin and glass particles. They are cemented onto the existing teeth using a bonding agent. Cosmetic fillings can improve the appearance of your smile. Unlike silver-colored fillings, cosmetic fillings look just like your natural teeth."
+    },
+    {
+        "id": "625b19eb93eee8f86766cab0",
+        "index": 3,
+        "picture": "https://www.diaryofanaspiringloser.com/wp-content/uploads/2021/09/shutterstock_81157801-1.jpg",
+        "price": 34,
+        "name": "Invisalign",
+        "shortText": "Invisalign is an orthodontic treatment that straightens teeth without the use of metal braces.",
+        "description": " Crooked smile? Invisalign is the best way to straighten your smile without interfering with your day-to-day life. Invisalign gradually moves your teeth using a series of custom-fitted, removable aligners. Invisalign aligners are nearly invisible and very comfortable to wear."
+    },
+    {
+        "id": "625b19eb3aed27668b581e1a",
+        "index": 4,
+        "picture": "https://safarmedical.com/wp-content/uploads/2021/03/veneers-1-1080x675.jpeg",
+        "price": 30,
+        "name": "Dental Veneers",
+        "shortText": "Dental veneers are thin covers that adhere to teeth to give teeth a more classically shaped look.",
+        "description": " Many people are discovering the benefits of veneers. Veneers are thin coverings that are placed over the front part of the teeth. Veneers are placed on teeth that are crooked, poorly shaped, or severely discolored. They may also be used to lighten teeth that are yellow or have a gray cast."
+    },
+    {
+        "id": "625b19eb3aed27668b581e1b",
+        "index": 5,
+        "picture": "https://www.flowerdental.com/wp-content/uploads/2021/03/teeth-cleaning-dental.jpg",
+        "price": 20,
+        "name": "Tooth Cleaning",
+        "shortText": "Teeth cleaning is performed at a dental office to remove plaque and tartar from the teeth.",
+        "description": "You should visit the dentist every six months for teeth cleanings. Tartar is a hard buildup of plaque that forms on the teeth. Tartar forms below and above the gum line. The only way to remove tartar is to see a dentist for a professional teeth cleaning. Regular teeth cleanings are important to maintaining healthy teeth and gums."
+    }
+]
