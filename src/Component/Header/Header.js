@@ -5,11 +5,10 @@ import CustomLink from './CustomLink';
 import "./Header.css"
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import Loading from '../Loading';
 import { signOut } from 'firebase/auth';
 
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
 
     const handleLogOut = () => {
         signOut(auth);

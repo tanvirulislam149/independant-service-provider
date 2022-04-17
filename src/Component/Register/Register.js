@@ -29,7 +29,9 @@ const Register = () => {
     // const [loading, setLoading] = useState("");
 
     if (creatingError || userError) {
-        setError(creatingError?.message || userError?.message);
+        if (!error) {
+            setError(creatingError.message || userError.message);
+        }
     }
 
     // if (creatingLoading) {
@@ -70,7 +72,6 @@ const Register = () => {
                     <input className='my-2 py-2 login-field' type="password" name="password" placeholder='Enter Your Password' required /><br />
                     <input className='my-2 py-2 login-field' type="password" name="confirmPassword" placeholder='Enter The Same Password' required /><br />
                     <p className='text-danger'>{error}</p>
-                    {/* <p className='text-primary'>{loading}</p> */}
                     <input className='my-2 py-2 bg-primary border-0 mx-auto w-25 d-block rounded-pill fw-bold text-white' type="submit" value="Sign Up" /> <br />
                     <Link to="/login" className='text-primary text-center d-block text-decoration-none fw-bold'>Already Have An Account ?</Link>
                 </form>
