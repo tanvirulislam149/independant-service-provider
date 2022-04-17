@@ -6,10 +6,16 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [currentUser, CurrentUserLoading] = useAuthState(auth);
+    const [showToast, setShowToast] = useState(false);
 
 
     const [
@@ -18,7 +24,6 @@ const Login = () => {
         loading,
         loginError,
     ] = useSignInWithEmailAndPassword(auth);
-    const [error, setError] = useState("");
 
 
     let navigate = useNavigate();
@@ -39,11 +44,14 @@ const Login = () => {
             </div>
         )
     }
+    const customId = "custom-id-yes";
 
-    if (loginError || googleError) {
-        if (!error) {
-            setError(loginError?.message || googleError.message);
-        }
+    if (loginError) {
+        toast("Error", { toastId: customId })
+
+
+        // toast("Error")
+        // toast("Wow so easy!")
     }
 
 
@@ -76,7 +84,6 @@ const Login = () => {
                     <h1 className='text-center text-primary'>Please Login</h1> <br />
                     <input className='my-2 py-2 login-field' type="email" name="email" placeholder='Enter Your Email' required /> <br />
                     <input className='my-2 py-2 login-field' type="password" name="password" placeholder='Enter Your Password' required /><br />
-                    <p className='text-danger'>{error}</p>
                     <input className='my-2 py-2 bg-primary border-0 mx-auto w-25 d-block rounded-pill fw-bold text-white' type="submit" value="Login" /> <br />
                     <Link to="/register" className='text-primary text-center d-block text-decoration-none fw-bold'>New Here? Create An Account</Link>
                     <div className='d-flex justify-content-center align-items-center'>
@@ -88,6 +95,8 @@ const Login = () => {
             </div>
             <button onClick={handleGoogleLogin} className='mx-auto d-block my-3 bg-white text-primary fw-bold py-3 px-5 border-primary rounded-pill border-1'> <img className='logo' src={google} alt="" /> Continue With Google</button>
             <button className='mx-auto d-block my-3 bg-white text-primary fw-bold py-3 px-5 border-primary rounded-pill border-1'> <img className='logo' src={twitter} alt="" /> Continue With Twitter</button>
+            <ToastContainer />
+
         </div>
     );
 };

@@ -9,7 +9,6 @@ import PageNotFound from './Component/PageNotFound/PageNotFound';
 import RequireAuth from './Component/RequiredAuth';
 import Blogs from './Component/Blogs/Blogs';
 import AboutMe from './Component/AboutMe/AboutMe';
-import Footer from "./Component/Home/Footer/Footer";
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<AboutMe></AboutMe>}></Route>
       </Routes>
-      <Footer></Footer>
     </div>
   );
 }

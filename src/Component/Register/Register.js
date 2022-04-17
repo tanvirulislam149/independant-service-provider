@@ -37,7 +37,6 @@ const Register = () => {
     }
 
 
-    // const [loading, setLoading] = useState("");
 
     if (creatingError || userError) {
         if (!error) {
@@ -45,9 +44,7 @@ const Register = () => {
         }
     }
 
-    // if (creatingLoading) {
-    //     console.log("loading");
-    // }
+
 
     if (currentUser) {
         return (
