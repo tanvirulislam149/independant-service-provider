@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Login.css";
 import google from "../../image/google.png"
 import twitter from "../../image/twitter.png"
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading';
@@ -19,7 +19,18 @@ const Login = () => {
         loginError,
     ] = useSignInWithEmailAndPassword(auth);
     const [error, setError] = useState("");
-    // let navigate = useNavigate();
+
+
+    let navigate = useNavigate();
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
+    useEffect(() => {
+        if (user || currentUser) {
+            navigate(from, { replace: true });
+        }
+    }, [user, currentUser, navigate, from]);
 
     if (CurrentUserLoading || loading) {
         return (
