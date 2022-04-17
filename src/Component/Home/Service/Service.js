@@ -1,3 +1,5 @@
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +24,7 @@ const Service = (props) => {
                         <Card.Text>{shortText}</Card.Text>
                     </Card.Body>
                 </Card>
-                <button onClick={() => seeMore(id)} className='border-0 bg-primary w-25 rounded-pill mx-auto fw-bold text-white'>See More</button>
+                <button onClick={() => seeMore(id)} className='border-0 bg-primary w-50 py-1 rounded-pill mx-auto fw-bold text-white'>See More <FontAwesomeIcon icon={faArrowAltCircleRight} /></button>
             </Col>
         </div>
     );
