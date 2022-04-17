@@ -1,9 +1,16 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import "./Service.css";
 
 const Service = (props) => {
-    const { name, price, picture, shortText } = props.service;
+    const { id, name, price, picture, shortText } = props.service;
+
+    const navigate = useNavigate();
+    const seeMore = (id) => {
+        navigate(`/${id}`)
+    }
+
     return (
         <div>
             <Col className='card border-0'>
@@ -15,7 +22,7 @@ const Service = (props) => {
                         <Card.Text>{shortText}</Card.Text>
                     </Card.Body>
                 </Card>
-                <button className='border-0 bg-primary w-25 rounded-pill mx-auto fw-bold text-white'>See More</button>
+                <button onClick={() => seeMore(id)} className='border-0 bg-primary w-25 rounded-pill mx-auto fw-bold text-white'>See More</button>
             </Col>
         </div>
     );
