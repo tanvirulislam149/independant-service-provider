@@ -25,6 +25,7 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
+                            <CustomLink className="me-2" to="/">Home</CustomLink>
                             {
                                 user ? <Button onClick={handleLogOut} className='m-0 py-0 fw-bold bg-none'>Log Out</Button> :
                                     <CustomLink to="/login">Login</CustomLink>

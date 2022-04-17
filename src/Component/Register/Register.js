@@ -41,7 +41,9 @@ const Register = () => {
     if (currentUser) {
         return (
             <div className='text-center' style={{ marginTop: "150px" }}>
-                <p>Registered User: {currentUser?.email}</p>
+                <h1>Welcome To DENTCARE</h1>
+                <h4>A Professional Dentist For Your Teeth Problem</h4>
+                <p>Login Email: {currentUser?.email}</p>
             </div>
         );
     }
