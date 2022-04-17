@@ -6,7 +6,7 @@ import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 const Footer = () => {
     const year = new Date().getFullYear();
     return (
-        <div className='footer'>
+        <div className='footer mt-5'>
             <div className='container text-center'>
                 <p className='nav-logo p-0 my-2'>DENT<span className='care nav-logo'>CARE</span></p>
                 <p className='mb-2'>All Rights Reserves to DENTCARE</p>
