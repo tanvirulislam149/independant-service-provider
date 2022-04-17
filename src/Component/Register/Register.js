@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init";
-import { Spinner } from 'react-bootstrap';
+import Loading from '../Loading';
 
 
 const Register = () => {
@@ -19,11 +19,9 @@ const Register = () => {
 
     if (loading || creatingLoading) {
         return (
-            <div className='text-center' style={{ marginTop: "150px" }}>
-                <Spinner animation="border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </Spinner>
-            </div >
+            <div>
+                <Loading></Loading>
+            </div>
         )
     }
 
