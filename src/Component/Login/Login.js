@@ -3,11 +3,13 @@ import "./Login.css";
 import google from "../../image/google.png"
 import twitter from "../../image/twitter.png"
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from '../Loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Button } from 'react-bootstrap';
+import { async } from '@firebase/util';
 
 
 
@@ -15,7 +17,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [currentUser, CurrentUserLoading] = useAuthState(auth);
-    const [showToast, setShowToast] = useState(false);
+    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
+    const [email, setEmail] = useState("");
 
 
     const [
@@ -32,7 +35,7 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (user || currentUser) {
+        if (currentUser) {
             navigate(from, { replace: true });
         }
     }, [user, currentUser, navigate, from]);
@@ -46,16 +49,15 @@ const Login = () => {
     }
     const customId = "custom-id-yes";
 
+
     if (loginError) {
-        toast("Error", { toastId: customId })
-
-
-        // toast("Error")
-        // toast("Wow so easy!")
+        toast(<p className='text-primary' onClick={async () => {
+            await sendPasswordResetEmail(email)
+        }}>Wrong Password. Want To Reset Password?</p>, { toastId: customId })
     }
 
 
-    if (currentUser) {
+    if (user) {
         return (
             <div className='text-center' style={{ marginTop: "150px" }}>
                 <h1>Welcome To DENTCARE</h1>
@@ -68,6 +70,7 @@ const Login = () => {
     const handleLogin = (event) => {
         event.preventDefault();
         const email = event.target.email.value;
+        setEmail(email);
         const password = event.target.password.value;
         signInWithEmailAndPassword(email, password);
     }
