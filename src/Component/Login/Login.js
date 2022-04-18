@@ -51,9 +51,14 @@ const Login = () => {
 
 
     if (loginError) {
-        toast(<p className='text-primary' onClick={async () => {
-            await sendPasswordResetEmail(email)
-        }}>Wrong Password. Want To Reset Password?</p>, { toastId: customId })
+        if (loginError.message === "Firebase: Error (auth/wrong-password).") {
+            toast(<p className='text-primary' onClick={async () => {
+                await sendPasswordResetEmail(email)
+            }}>Wrong Password. Click here to Reset Password.</p>, { toastId: customId })
+        }
+        else {
+            toast(<p className='text-danger'>{loginError.message}</p>, { toastId: customId })
+        }
     }
 
 

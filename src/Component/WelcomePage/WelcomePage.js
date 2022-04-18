@@ -8,9 +8,9 @@ const WelcomePage = () => {
     return (
         <div>
             <div className='text-center' style={{ marginTop: "150px" }}>
-                <h1>Welcome To DENTCARE</h1>
+                <h1>Welcome {currentUser?.displayName}</h1>
+                <h4>It is DENTCARE conducted by Dr. Mills River </h4>
                 <h4>A Professional Dentist For Your Teeth Problem</h4>
-                <p>Login Email: {currentUser?.email}</p>
             </div>
         </div>
     );

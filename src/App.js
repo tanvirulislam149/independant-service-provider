@@ -23,7 +23,7 @@ function App() {
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<AboutMe></AboutMe>}></Route>
-        <Route path="/welcome" element={<WelcomePage></WelcomePage>}></Route>
+        <Route path="/welcome" element={<RequireAuth><WelcomePage></WelcomePage></RequireAuth>}></Route>
       </Routes>
     </div>
   );
