@@ -32,7 +32,7 @@ const Login = () => {
     let navigate = useNavigate();
     let location = useLocation();
 
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/welcome";
 
     useEffect(() => {
         if (currentUser) {
@@ -57,15 +57,6 @@ const Login = () => {
     }
 
 
-    if (user) {
-        return (
-            <div className='text-center' style={{ marginTop: "150px" }}>
-                <h1>Welcome To DENTCARE</h1>
-                <h4>A Professional Dentist For Your Teeth Problem</h4>
-                <p>Login Email: {currentUser?.email}</p>
-            </div>
-        );
-    }
 
     const handleLogin = (event) => {
         event.preventDefault();

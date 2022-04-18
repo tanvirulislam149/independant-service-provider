@@ -9,6 +9,7 @@ import PageNotFound from './Component/PageNotFound/PageNotFound';
 import RequireAuth from './Component/RequiredAuth';
 import Blogs from './Component/Blogs/Blogs';
 import AboutMe from './Component/AboutMe/AboutMe';
+import WelcomePage from './Component/WelcomePage/WelcomePage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="*" element={<PageNotFound></PageNotFound>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<AboutMe></AboutMe>}></Route>
+        <Route path="/welcome" element={<WelcomePage></WelcomePage>}></Route>
       </Routes>
     </div>
   );
