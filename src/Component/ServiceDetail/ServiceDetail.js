@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import PageNotFound from '../PageNotFound/PageNotFound';
 import ShowDetail from './ShowDetail/ShowDetail';
 
 const ServiceDetail = () => {
-    let { id } = useParams();
+    let { serviceId } = useParams();
 
     const [services, setServices] = useState([]);
 
@@ -14,12 +15,14 @@ const ServiceDetail = () => {
     }, [])
 
 
-    let detail = services.find(detail => detail.id === id);
-    return (
-        <div>
-            {detail ? < ShowDetail detail={detail}></ShowDetail> : ""}
-        </div >
-    );
+    if (services) {
+        let detail = services.find(detail => detail.id === serviceId);
+        return (
+            <div>
+                {detail ? < ShowDetail detail={detail}></ShowDetail> : <PageNotFound></PageNotFound>}
+            </div >
+        );
+    }
 
 };
 
