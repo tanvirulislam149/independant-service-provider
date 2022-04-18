@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 
 const WelcomePage = () => {
-    const [currentUser, CurrentUserLoading] = useAuthState(auth);
+    const [currentUser] = useAuthState(auth);
 
     return (
         <div>
