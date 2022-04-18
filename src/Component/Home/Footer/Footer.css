@@ -1,3 +1,5 @@
 .footer {
     background-image: linear-gradient(to right, rgb(77, 150, 245), rgb(207, 233, 255));
+    position: relative;
+    bottom: 0;
 }

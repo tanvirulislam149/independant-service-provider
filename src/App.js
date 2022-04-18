@@ -10,6 +10,7 @@ import RequireAuth from './Component/RequiredAuth';
 import Blogs from './Component/Blogs/Blogs';
 import AboutMe from './Component/AboutMe/AboutMe';
 import WelcomePage from './Component/WelcomePage/WelcomePage';
+import Footer from "./Component/Home/Footer/Footer";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<AboutMe></AboutMe>}></Route>
         <Route path="/welcome" element={<RequireAuth><WelcomePage></WelcomePage></RequireAuth>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

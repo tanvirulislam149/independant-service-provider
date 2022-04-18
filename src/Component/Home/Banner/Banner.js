@@ -9,7 +9,9 @@ const Banner = () => {
             <div className='banner-text img-fluid'>
                 <p className='m-0'>I Care</p>
                 <p className='m-0'> About Your</p>
-                <p>Smile</p>
+                <p>Smile.</p>
+                <h1 className='m-0 text-white fw-bold'>Dr. Mills River</h1>
+                <h4>Oral and Dental Surgeon</h4>
             </div>
         </div>
     );

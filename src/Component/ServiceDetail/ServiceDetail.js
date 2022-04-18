@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loading from '../Loading';
 import PageNotFound from '../PageNotFound/PageNotFound';
 import ShowDetail from './ShowDetail/ShowDetail';
 
 const ServiceDetail = () => {
     let { serviceId } = useParams();
 
-    const [services, setServices] = useState([]);
+    const [services, setServices] = useState("");
 
     useEffect(() => {
         fetch("data.json")
@@ -22,6 +23,9 @@ const ServiceDetail = () => {
                 {detail ? < ShowDetail detail={detail}></ShowDetail> : <PageNotFound></PageNotFound>}
             </div >
         );
+    }
+    else {
+        return <Loading></Loading>;
     }
 
 };

@@ -5,9 +5,26 @@
 
 .banner-text {
     color: rgb(77, 77, 145);
-    font-size: 5vw;
+    font-size: 4vw;
     position: absolute;
     top: 70px;
     left: 10%;
     font-weight: 900;
+    /* width: 400px; */
+}
+
+
+@media screen and (max-width: 576px) {
+    .banner {
+        height: 35vh;
+    }
+
+    .banner-text {
+        /* border: 2px solid red; */
+        width: 230px;
+        left: 3%;
+        top: 50px;
+        font-size: 5vw;
+        /* font-size: 35px; */
+    }
 }
